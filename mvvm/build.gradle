@@ -1,0 +1,49 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.jakewharton.butterknife'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+
+    defaultConfig {
+        applicationId "com.wuchao.mvvm"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    dataBinding {
+        enabled = true
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    def dependencies = rootProject.ext.dependencies
+    compile dependencies.supportAppCompat
+    compile dependencies.supportDesign
+    compile dependencies.supportRecyclerView
+    compile dependencies.supportCardView
+    compile dependencies.constraintLayout
+    compile dependencies.rxJava2
+    compile dependencies.rxAndroid2
+    compile dependencies.retrofit
+    compile dependencies.retrofitGsonConverter
+    compile dependencies.retrofitRxjava2Adapter
+    compile dependencies.picasso
+    compile dependencies.circleimageview
+    compile dependencies.butterknife
+    annotationProcessor dependencies.butterknifecompiler
+    testCompile 'junit:junit:4.12'
+}

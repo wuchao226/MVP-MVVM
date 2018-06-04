@@ -1,0 +1,40 @@
+ext {
+    //support
+    compileSdkVersion = 27
+    minSdkVersion = 15
+    targetSdkVersion = 27
+    supportLibVersion = "27.1.1"
+
+    //http
+    retrofitLibVersion = "2.4.0"
+    okhttpLibVersion = "3.9.0"
+
+    //Rx
+    rxjavaLibVersion = "2.1.6"
+    rxAndroidVersion = "2.0.1"
+
+    androidSupport = "com.android.support"
+
+    dependencies = [
+            //support
+            supportAppCompat      : "$androidSupport:appcompat-v7:$supportLibVersion",
+            supportDesign         : "$androidSupport:design:$supportLibVersion",
+            supportRecyclerView   : "$androidSupport:recyclerview-v7:$supportLibVersion",
+            supportCardView       : "$androidSupport:cardview-v7:$supportLibVersion",
+            constraintLayout      : "com.android.support.constraint:constraint-layout:1.1.0",
+
+            //Rx
+            rxJava2               : "io.reactivex.rxjava2:rxjava:2.1.1",
+            rxAndroid2            : "io.reactivex.rxjava2:rxandroid:2.0.1",
+            //http
+            retrofit              : "com.squareup.retrofit2:retrofit:$retrofitLibVersion",
+            retrofitGsonConverter : "com.squareup.retrofit2:converter-gson:$retrofitLibVersion",
+            retrofitRxjava2Adapter: "com.squareup.retrofit2:adapter-rxjava2:$retrofitLibVersion",
+
+            //useful
+            butterknife           : "com.jakewharton:butterknife:8.4.0",
+            butterknifecompiler   : "com.jakewharton:butterknife-compiler:8.4.0",
+            picasso               : "com.squareup.picasso:picasso:2.5.2",
+            circleimageview       : "de.hdodenhof:circleimageview:2.1.0",
+    ]
+}
